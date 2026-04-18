@@ -1,0 +1,17 @@
+rule Suspicious_PowerShell_Download
+{
+    strings:
+        $ps1 = "powershell"
+        $ps2 = "Invoke-WebRequest"
+        $ps3 = "DownloadString"
+
+    condition:
+        all of them
+}
+
+
+//Scenario:
+An attacker uses PowerShell to download malware from the internet.
+
+Explanation:
+This rule triggers when all three common download-related PowerShell keywords appear together, indicating potential malicious script execution.//
