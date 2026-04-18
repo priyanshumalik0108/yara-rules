@@ -1,0 +1,11 @@
+rule Suspicious_CMD_Commands
+{
+    strings:
+        $cmd1 = "cmd.exe"
+        $cmd2 = "/c"
+        $cmd3 = "whoami"
+
+    condition:
+        all of them
+}
+
