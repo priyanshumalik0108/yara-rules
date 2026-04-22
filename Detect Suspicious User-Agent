@@ -1,0 +1,10 @@
+rule Suspicious_UserAgent
+{
+    strings:
+        $ua1 = "Mozilla/5.0"
+        $ua2 = "curl"
+        $ua3 = "Wget"
+
+    condition:
+        any of them
+}
